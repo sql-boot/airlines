@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "9c8f15aa-fea1-4f25-833d-68a024fc49c5",
+		"name": "postgres-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello world",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "61f1974e-3cbf-474a-82ed-9baee2405a29",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('Response has a valid Content-Type header', function() {",
+							"  pm.response.to.have.header('content-type');",
+							"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check count\",function () {",
+							"      pm.expect(pm.response.json().length).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Check tables\",function () {",
+							"      pm.expect(pm.response.json()[0].is_alive).to.eql(true);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8007/api/demodb/health.sql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"api",
+						"demodb",
+						"health.sql"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
