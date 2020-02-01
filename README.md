@@ -6,8 +6,8 @@ Simple [sql-boot](https://github.com/CrocInc/sql-boot) template for PostgreSQL s
 
 1. Clone this repo (or click "Use this template" and clone new repo):
 ```
-git clone https://github.com/sql-boot/postgres-template.git
-cd postgres-template
+git clone https://github.com/sql-boot/airlines.git
+cd airlines
 ```
 
 2. Put your SQL scripts to `sql` folder
