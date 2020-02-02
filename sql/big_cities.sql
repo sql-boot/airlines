@@ -1,10 +1,3 @@
-/*
-{
-  "name": "big_cities",
-  "title": "Big cities",
-  "description": "Cities with more than one airport"
-}
-*/
 select a.airport_code as code
      , a.airport_name
      , a.city
